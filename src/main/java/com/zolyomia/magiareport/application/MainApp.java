@@ -1,7 +1,7 @@
 package com.zolyomia.magiareport.application;
 
 import com.zolyomia.magiareport.application.config.AppContextConfig;
-import com.zolyomia.magiareport.ui.controller.base.ScreensController;
+import com.zolyomia.magiareport.ui.base.ScreensController;
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;

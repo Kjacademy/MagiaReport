@@ -1,4 +1,4 @@
-package com.zolyomia.magiareport.ui.controller.base;
+package com.zolyomia.magiareport.ui.base;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

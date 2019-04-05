@@ -1,4 +1,4 @@
-package com.zolyomia.magiareport.ui.controller.base;
+package com.zolyomia.magiareport.ui.base;
 
 import static java.util.Objects.isNull;
 
@@ -12,12 +12,10 @@ import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.springframework.beans.BeansException;

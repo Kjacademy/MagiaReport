@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.zolyomia.magiareport.ui.controller.base.BaseScreenController;
+import com.zolyomia.magiareport.ui.base.BaseScreenController;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.config.Scope;
 

@@ -1,10 +1,10 @@
-package com.zolyomia.magiareport.ui.controller;
+package com.zolyomia.magiareport.ui.login;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.zolyomia.magiareport.application.scope.ScreenScoped;
-import com.zolyomia.magiareport.ui.controller.base.BaseScreenController;
+import com.zolyomia.magiareport.ui.base.BaseScreenController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
