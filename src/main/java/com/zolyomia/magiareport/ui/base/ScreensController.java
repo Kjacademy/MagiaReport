@@ -12,10 +12,11 @@ import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.springframework.beans.BeansException;
@@ -41,7 +42,7 @@ public class ScreensController implements ApplicationContextAware {
 
     public void init(Stage stage) {
         this.stage = stage;
-        Group root = new Group();
+        StackPane root = new StackPane();
         this.stage.setScene(new Scene(root));
     }
 
@@ -74,7 +75,7 @@ public class ScreensController implements ApplicationContextAware {
     }
 
     private void swapScreen(final Parent root) {
-        final Group rootGroup = getScreenRoot();
+        final Pane rootGroup = getScreenRoot();
         final DoubleProperty opacity = rootGroup.opacityProperty();
 
         if (!isScreenEmpty()) {
@@ -137,8 +138,8 @@ public class ScreensController implements ApplicationContextAware {
         }
     }
 
-    private Group getScreenRoot() {
-        return (Group) this.stage.getScene().getRoot();
+    private StackPane getScreenRoot() {
+        return (StackPane) this.stage.getScene().getRoot();
     }
 
     private boolean isScreenEmpty() {

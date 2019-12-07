@@ -2,6 +2,7 @@ package com.zolyomia.magiareport.service.weeklyreport;
 
 import static java.util.stream.Collectors.*;
 
+import java.io.File;
 import java.util.List;
 
 import com.zolyomia.magiareport.data.rawreport.RawReportDataRepository;
@@ -23,7 +24,7 @@ public class WeeklyRawReportService {
         this.rowMapper = rowMapper;
     }
 
-    public List<WeeklyReportRow> findAllFrom(String datasourcePath) {
+    public List<WeeklyReportRow> findAllFrom(File datasourcePath) {
         return rawReportDataRepository
             .findAll(datasourcePath)
             .stream()

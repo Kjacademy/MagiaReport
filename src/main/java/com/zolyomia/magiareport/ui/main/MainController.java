@@ -4,10 +4,10 @@ import static java.util.Objects.nonNull;
 
 import java.io.File;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import com.zolyomia.magiareport.application.scope.ScreenScoped;
+import com.zolyomia.magiareport.service.weeklyreport.WeeklyAgeingReportService;
 import com.zolyomia.magiareport.service.weeklyreport.WeeklyRawReportService;
 import com.zolyomia.magiareport.ui.base.BaseScreenController;
 import com.zolyomia.magiareport.ui.main.domain.WeeklyReportRow;
@@ -29,10 +29,13 @@ public class MainController extends BaseScreenController implements Initializabl
     private TableView rawReportTable;
 
     private final WeeklyRawReportService weeklyRawReportService;
+    private final WeeklyAgeingReportService weeklyAgeingReportService;
 
     @Autowired
-    public MainController(WeeklyRawReportService weeklyRawReportService) {
+    public MainController(WeeklyRawReportService weeklyRawReportService,
+        WeeklyAgeingReportService weeklyAgeingReportService) {
         this.weeklyRawReportService = weeklyRawReportService;
+        this.weeklyAgeingReportService = weeklyAgeingReportService;
     }
 
     @Override
@@ -47,10 +50,24 @@ public class MainController extends BaseScreenController implements Initializabl
         fileChooser.setTitle("Open Resource File");
         File file = fileChooser.showOpenDialog(null);
 
-        if(nonNull(file)) {
-            ObservableList<WeeklyReportRow> weeklyReportRows = FXCollections.observableArrayList(weeklyRawReportService.findAllFrom(file.getPath()));
+        if (nonNull(file)) {
+            ObservableList<WeeklyReportRow> weeklyReportRows = FXCollections.observableArrayList(weeklyRawReportService.findAllFrom(file));
             rawReportTable.setItems(weeklyReportRows);
             rawReportTable.refresh();
+        }
+    }
+
+    @FXML
+    private void handleGenerateAgeingReport(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open former Ageing Report File");
+        File formerReport = fileChooser.showOpenDialog(null);
+
+        fileChooser.setTitle("Open new Raw Report File");
+        File rawReport = fileChooser.showOpenDialog(null);
+
+        if (nonNull(formerReport)) {
+            weeklyAgeingReportService.generateWeeklyAgingReport(rawReport, formerReport);
         }
     }
 }

@@ -31,11 +31,11 @@ public class ExcelRawReportDataRepository implements RawReportDataRepository {
     }
 
     @Override
-    public List<RawReportDataRow> findAll(String datasourcePath) {
+    public List<RawReportDataRow> findAll(File datasource) {
         try {
             List<RawReportDataRow> result = new ArrayList<>();
 
-            Workbook workbook = WorkbookFactory.create(new File(datasourcePath));
+            Workbook workbook = WorkbookFactory.create(datasource);
             checkWorksheetsNumber(workbook);
 
             Sheet sheet = workbook.getSheetAt(0);
@@ -50,11 +50,10 @@ public class ExcelRawReportDataRepository implements RawReportDataRepository {
             workbook.close();
 
             return result;
-
         } catch (IOException e) {
-            logger.error("Problem has occurred during the excel data load. File path = {}", datasourcePath, e);
+            logger.error("Problem has occurred during the excel data load. File path = {}", datasource, e);
         } catch (InvalidFormatException e) {
-            logger.error("Problem has occurred during the excel data load. File path = {}", datasourcePath, e);
+            logger.error("Problem has occurred during the excel data load. File path = {}", datasource, e);
         }
         return null;
     }
