@@ -1,4 +1,4 @@
-package com.zolyomia.magiareport.data.config;
+package com.zolyomi.magiareport.configuration;
 
 import javax.sql.DataSource;
 

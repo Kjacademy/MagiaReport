@@ -1,4 +1,4 @@
-package com.zolyomia.magiareport.data;
+package magiareport.data;
 
 import static org.mockito.Mockito.when;
 
@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
-import com.zolyomia.magiareport.data.rawreport.domain.RawReportDataRow;
 import com.zolyomia.magiareport.data.rawreport.ExcelRawReportDataRowMapper;
+import com.zolyomia.magiareport.data.rawreport.domain.RawReportDataRow;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.junit.jupiter.api.BeforeEach;

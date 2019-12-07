@@ -1,6 +1,4 @@
-package com.zolyomia.magiareport.service.weeklyreport;
-
-import static org.junit.jupiter.api.Assertions.*;
+package magiareport.service.weeklyreport;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.zolyomia.magiareport.data;
+package magiareport.data;
 
 import java.io.File;
 

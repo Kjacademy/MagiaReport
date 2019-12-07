@@ -7,7 +7,11 @@
     <groupId>com.zolyomia</groupId>
     <artifactId>magia-report</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>magia-persistence</module>
+        <module>magia-application</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>MagiaReport</name>
 
